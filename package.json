@@ -1,7 +1,11 @@
 {
-  "name": "vue-driver",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-driver.js",
+  "version": "1.0.0",
+  "private": false,
+  "files": [
+    "/plugins/driver.js"
+  ],
+  "main": "/plugins/driver.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
