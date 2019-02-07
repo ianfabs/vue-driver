@@ -36,10 +36,12 @@ VueDriver.install = function (Vue, options) {
   })
   Vue.prototype.$driver = VueDriver.driver
   Vue.prototype.$startTour = (index) => {
-    VueDriver.driver.defineSteps([...VueDriver.steps])
-    // console.log(VueDriver.steps)
-    // console.log(VueDriver.driver.steps)
-    VueDriver.driver.start(index)
+    Vue.nextTick(() => {
+      VueDriver.driver.defineSteps([...VueDriver.steps])
+      // console.log(VueDriver.steps)
+      // console.log(VueDriver.driver.steps)
+      VueDriver.driver.start(index)
+    })
   }
 }
 
