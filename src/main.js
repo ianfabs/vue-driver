@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueDriver from './plugins/driver'
-import './plugins/kite.less'
+import './plugins/theme.less'
 
 Vue.use(VueDriver)
 
