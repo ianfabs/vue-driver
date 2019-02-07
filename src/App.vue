@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <button @click.stop="startTour"> Start Tour </button>
-    <div class="card" v-driver-step="{ popover: {title: 'Hello'}, onclick: true }">
+    <button @click.stop="startTour" class="button"> Start Tour </button>
+    <div class="card" v-driver-step="steps[0]">
       This div is a driver step!
     </div>
-    <div id="garbage" class="card" v-driver-step="{ popover: {title: 'World', description: 'This is a description'} }">
+    <div id="garbage" class="card" v-driver-step="steps[2]">
       So is this one
     </div>
-    <div id="case" class="card" v-driver-step="{ popover: {title: 'im out of order!'}, index: 0 }">
+    <div id="case" class="card" v-driver-step="steps[1]">
       And this one!
     </div>
   </div>
@@ -17,6 +17,35 @@
 
 export default {
   name: 'app',
+  data () {
+    return {
+      steps: [
+        {
+          popover: {
+            title: 'Hello World!',
+            description: 'VueDriver is a Vue.js plugin that wraps around driver.js, a library that helps drive the users focus'
+          },
+          index: 0
+        },
+        {
+          popover: {
+            title: 'Driver is great for running user tutorials!',
+            description: 'Because it lets you draw attention to the important parts of your site',
+            position: 'top-right'
+          },
+          index: 1
+        },
+        {
+          popover: {
+            title: 'You can use <b>HTML</b>!!',
+            description: 'Driver <i>natively</i> supports it!',
+            position: 'bottom-center'
+          },
+          index: 2
+        }
+      ]
+    }
+  },
   methods: {
     startTour () {
       this.$startTour()
