@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click.stop="startTour"> Start Tour </button>
+    <div class="card" v-driver-step="{ popover: {title: 'Hello'}, onclick: true }">
+      This div is a driver step!
+    </div>
+    <div id="garbage" class="card" v-driver-step="{ popover: {title: 'World'} }">
+      So is this one
+    </div>
+    <div id="case" class="card" v-driver-step="{ popover: {title: 'im out of order!'}, index: 0 }">
+      And this one!
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  methods: {
+    startTour () {
+      this.$startTour()
+    }
   }
 }
 </script>
@@ -24,5 +33,19 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+.card {
+  width: 500px;
+  height: max-content;
+  padding: 20px 10px;
+  margin: 20px 10px;
+  box-shadow: 0px 1px 5px -1px #000;
+  border-radius: 5px;
+  text-align: center;
 }
 </style>
