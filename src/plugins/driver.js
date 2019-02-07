@@ -25,24 +25,22 @@ VueDriver.install = function (Vue, options) {
         VueDriver.steps.push(step)
       }
       if (binding.value && binding.value.onclick === true) {
-        el.onclick = () => {
-          VueDriver.driver.highlight(step)
-        }
+        // This may cause a bug
+        el.onclick = event => VueDriver.driver.highlight(step)
       }
-      // console.dir(el);
-      // console.log(binding.value);
-      // console.log(vnode);
-      // console.log(oldVnode);
+      // console.dir(el)
+      // console.log(binding.value)
+      // console.log(vnode)
+      // console.log(oldVnode)
     }
   })
-  Vue.prototype.$startTour = () => {
+  Vue.prototype.$driver = VueDriver.driver
+  Vue.prototype.$startTour = (index) => {
     VueDriver.driver.defineSteps([...VueDriver.steps])
-    console.log(VueDriver.steps)
-    console.log(VueDriver.driver.steps)
-    VueDriver.driver.start()
+    // console.log(VueDriver.steps)
+    // console.log(VueDriver.driver.steps)
+    VueDriver.driver.start(index)
   }
-
-  Vue.prototype.$driver = VueDriver._driver
 }
 
 export default VueDriver
