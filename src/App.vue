@@ -77,4 +77,15 @@ export default {
   border-radius: 5px;
   text-align: center;
 }
+.button {
+  padding: 10px 20px;
+  background: #409EFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: 0.4s box-shadow;
+  &:hover {
+    box-shadow: 0px 2px 8px 1px lighten(black, 75%);
+  }
+}
 </style>
