@@ -4,7 +4,7 @@
     <div class="card" v-driver-step="{ popover: {title: 'Hello'}, onclick: true }">
       This div is a driver step!
     </div>
-    <div id="garbage" class="card" v-driver-step="{ popover: {title: 'World'} }">
+    <div id="garbage" class="card" v-driver-step="{ popover: {title: 'World', description: 'This is a description'} }">
       So is this one
     </div>
     <div id="case" class="card" v-driver-step="{ popover: {title: 'im out of order!'}, index: 0 }">
