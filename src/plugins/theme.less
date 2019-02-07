@@ -126,7 +126,7 @@ div#driver-popover-item {
         cursor: pointer;
         outline: 0;
         background-color: white;
-        border: 2px solid @el-base-border;
+        border: 2px solid darken(@el-base-border, 10%);
         border-radius: 4px;
         margin: 10px 0 0;
         line-height: 1.3;
@@ -139,6 +139,7 @@ div#driver-popover-item {
   
       button.driver-disabled {
         color: lighten(@el-text-regular, 40%);
+        border-color: lighten(@el-base-border, 5%);
         cursor: default;
         pointer-events: none;
       }
